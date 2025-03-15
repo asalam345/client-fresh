@@ -1,0 +1,10 @@
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityModel.dll.config
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityModel.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityModel.pdb
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityFramework.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityFramework.xml
+E:\GitHub\Clients\Fresh\EntityModel\bin\Debug\EntityFramework.SqlServer.xml
+E:\GitHub\Clients\Fresh\EntityModel\obj\Debug\EntityModel.dll
+E:\GitHub\Clients\Fresh\EntityModel\obj\Debug\EntityModel.pdb
+E:\GitHub\Clients\Fresh\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache

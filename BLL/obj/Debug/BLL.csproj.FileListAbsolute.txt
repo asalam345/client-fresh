@@ -1,0 +1,7 @@
+E:\GitHub\Clients\Fresh\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\GitHub\Clients\Fresh\BLL\bin\Debug\BLL.dll
+E:\GitHub\Clients\Fresh\BLL\bin\Debug\BLL.pdb
+E:\GitHub\Clients\Fresh\BLL\bin\Debug\DAL.dll
+E:\GitHub\Clients\Fresh\BLL\bin\Debug\DAL.pdb
+E:\GitHub\Clients\Fresh\BLL\obj\Debug\BLL.dll
+E:\GitHub\Clients\Fresh\BLL\obj\Debug\BLL.pdb

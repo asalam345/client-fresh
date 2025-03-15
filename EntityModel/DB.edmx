@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BRANCH_TYPE">
+          <Key>
+            <PropertyRef Name="BRANCH_TYPE_ID" />
+          </Key>
+          <Property Name="BRANCH_TYPE_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRANCH_TYPE_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="ITEM_DISCOUNT">
+          <Key>
+            <PropertyRef Name="DISCOUNT_ID" />
+          </Key>
+          <Property Name="DISCOUNT_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AMOUNT" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ITEM_PICTURE">
+          <Key>
+            <PropertyRef Name="PICTURE_ID" />
+          </Key>
+          <Property Name="PICTURE_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PICTURE_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="PICTURE" Type="image" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="CREATION_BY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ITEM_SELECT">
+          <Key>
+            <PropertyRef Name="SelectedId" />
+          </Key>
+          <Property Name="SelectedId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="name" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pic" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="discount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="total" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="totalDiscount" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="availableQuantity" Type="int" />
+          <Property Name="CustomerID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGIN_INFO">
+          <Key>
+            <PropertyRef Name="LOGIN_INFO_ID" />
+          </Key>
+          <Property Name="LOGIN_INFO_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IP_ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="DATE" Type="date" Nullable="false" />
+          <Property Name="TIME" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SYSTEM_ACCESS_POLICY">
+          <Key>
+            <PropertyRef Name="SYS_ACCP_ID" />
+          </Key>
+          <Property Name="SYS_ACCP_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_GROUP_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SYS_MENU_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SYS_ACCESS_DATE" Type="date" />
+          <Property Name="SYS_ACCESS_TITLE" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_MENU_FILE" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_ACCESS_BY" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="SYSTEM_AUDIT_INFO">
+          <Key>
+            <PropertyRef Name="SYS_AUDIT_LOG_ID" />
+          </Key>
+          <Property Name="SYS_AUDIT_LOG_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SYS_USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="OPERATION_TYPE" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_AUDIT_NOTE" Type="varchar" MaxLength="50" />
+          <Property Name="OPERATION_BY" Type="varchar" MaxLength="50" />
+          <Property Name="OPERATION_DETAILS" Type="varchar" MaxLength="50" />
+          <Property Name="OPERATION_DATE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_ADDRESS">
+          <Key>
+            <PropertyRef Name="ADDRESS_ID" />
+          </Key>
+          <Property Name="ADDRESS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADDRESS_DETAILS" Type="varchar" MaxLength="200" />
+          <Property Name="CUSTOMER_ID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TABLE_BRANCH_INFO">
+          <Key>
+            <PropertyRef Name="BRANCH_ID" />
+          </Key>
+          <Property Name="BRANCH_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRANCH_TITLE" Type="varchar" MaxLength="100" />
+          <Property Name="BRANCH_SHORT_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH_CONTACT_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="BRANCH_ADDRESS_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+        </EntityType>
+        <EntityType Name="TABLE_CATEGORY">
+          <Key>
+            <PropertyRef Name="CATEGORY_ID" />
+          </Key>
+          <Property Name="CATEGORY_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CATEGORY_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_CONTACT">
+          <Key>
+            <PropertyRef Name="CONTACT_ID" />
+          </Key>
+          <Property Name="CONTACT_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONTACT_TYPE_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CONTACT_INFO" Type="varchar" MaxLength="500" />
+          <Property Name="CONTACT_PERSON_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_GROUP_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_CONTACT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTACT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTACT_TYPE_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CONTACT_TYPE_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMER_ID" />
+          </Key>
+          <Property Name="CUSTOMER_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="ISLOGEDIN" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TABLE_DESIGNATION">
+          <Key>
+            <PropertyRef Name="DESIGNATION_ID" />
+          </Key>
+          <Property Name="DESIGNATION_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESIGNATION_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="DESIGNATION_CODE" Type="varbinary" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TABLE_DISTRICT">
+          <Key>
+            <PropertyRef Name="DISTRICT_ID" />
+          </Key>
+          <Property Name="DISTRICT_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DISTRICT_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="DISTRICT_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="DIVISION_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_DIVISION">
+          <Key>
+            <PropertyRef Name="DIVISION_ID" />
+          </Key>
+          <Property Name="DIVISION_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DIVISION_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_EMAIL">
+          <Key>
+            <PropertyRef Name="EMAIL_ID" />
+          </Key>
+          <Property Name="EMAIL_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMAIL_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL_PERSON_ID" Type="varchar" MaxLength="50" />
+          <Property Name="USER_GROUP_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_ITEM">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ITEM_SHORT_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="ITEM_BARCODE" Type="varchar" MaxLength="100" />
+          <Property Name="CATEGORY_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UNIT_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_ORDER">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ORDER_DATE" Type="date" />
+          <Property Name="DELIVERY_DATE" Type="date" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_ORDER_DETAILS">
+          <Key>
+            <PropertyRef Name="ORDER_DETAILS_ID" />
+          </Key>
+          <Property Name="ORDER_DETAILS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORDER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ORDER_LIST" Type="image" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE">
+          <Key>
+            <PropertyRef Name="CHALLAN_NO" />
+          </Key>
+          <Property Name="CHALLAN_NO" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_DETAILS">
+          <Key>
+            <PropertyRef Name="PURCHASE_DETAILS_ID" />
+          </Key>
+          <Property Name="PURCHASE_DETAILS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CHALLAN_NO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PURCHASE_PRICE" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="PURCHASE_QTY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SALES_PRICE" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="REMAIN_QTY" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_RETURN">
+          <Key>
+            <PropertyRef Name="CHALLAN_NO" />
+          </Key>
+          <Property Name="CHALLAN_NO" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_RETURN_DETAILS">
+          <Key>
+            <PropertyRef Name="PURCHASE_RETURN_DETAILS_ID" />
+          </Key>
+          <Property Name="PURCHASE_RETURN_DETAILS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CHALLAN_NO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RETURN_QTY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RETURN_PRICE" Type="numeric" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES">
+          <Key>
+            <PropertyRef Name="BILL_NO" />
+          </Key>
+          <Property Name="BILL_NO" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USERI_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="DELIVERY_DATE" Type="date" />
+          <Property Name="DELIVERY_STATUS" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_DETAILS">
+          <Key>
+            <PropertyRef Name="SALES_DETAILS_ID" />
+          </Key>
+          <Property Name="SALES_DETAILS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BILL_NO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SALES_QTY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SALES_PRICE" Type="numeric" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_RETURN">
+          <Key>
+            <PropertyRef Name="BILL_NO" />
+          </Key>
+          <Property Name="BILL_NO" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="COMPUTER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="RETURN_DATE" Type="date" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_RETURN_DETAILS">
+          <Key>
+            <PropertyRef Name="SALES_RETURN_DETAILS_ID" />
+          </Key>
+          <Property Name="SALES_RETURN_DETAILS_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BILL_NO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RETURN_QTY" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RETURN_PRICE" Type="numeric" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+        </EntityType>
+        <EntityType Name="TABLE_SYS_USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="USER_FULL_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_LOGIN_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_LOGIN_PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="CREATION_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="date" />
+          <Property Name="USER_DESIGNATION_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="BRANCH_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_GROUP_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_THANA">
+          <Key>
+            <PropertyRef Name="THANA_ID" />
+          </Key>
+          <Property Name="THANA_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="THANA_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="THANA_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="DISTRICT_ID" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_UNIT">
+          <Key>
+            <PropertyRef Name="UNIT_ID" />
+          </Key>
+          <Property Name="UNIT_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UNIT_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TABLE_USER_GROUP">
+          <Key>
+            <PropertyRef Name="USER_GROUP_ID" />
+          </Key>
+          <Property Name="USER_GROUP_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_GROUP_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_GROUP_SHORT_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_GROUP_CODE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="spPrimaryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TableName" Type="varchar" Mode="In" />
+          <Parameter Name="FieldName" Type="varchar" Mode="In" />
+          <Parameter Name="Id" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="spValidateUserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoginID" Type="varchar" Mode="In" />
+          <Parameter Name="LoginPassword" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="EntityModelStoreContainer">
+          <EntitySet Name="BRANCH_TYPE" EntityType="Self.BRANCH_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_DISCOUNT" EntityType="Self.ITEM_DISCOUNT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_PICTURE" EntityType="Self.ITEM_PICTURE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_SELECT" EntityType="Self.ITEM_SELECT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN_INFO" EntityType="Self.LOGIN_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYSTEM_ACCESS_POLICY" EntityType="Self.SYSTEM_ACCESS_POLICY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYSTEM_AUDIT_INFO" EntityType="Self.SYSTEM_AUDIT_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_ADDRESS" EntityType="Self.TABLE_ADDRESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_BRANCH_INFO" EntityType="Self.TABLE_BRANCH_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_CATEGORY" EntityType="Self.TABLE_CATEGORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_CONTACT" EntityType="Self.TABLE_CONTACT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_CONTACT_TYPE" EntityType="Self.TABLE_CONTACT_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_CUSTOMER" EntityType="Self.TABLE_CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_DESIGNATION" EntityType="Self.TABLE_DESIGNATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_DISTRICT" EntityType="Self.TABLE_DISTRICT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_DIVISION" EntityType="Self.TABLE_DIVISION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_EMAIL" EntityType="Self.TABLE_EMAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_ITEM" EntityType="Self.TABLE_ITEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_ORDER" EntityType="Self.TABLE_ORDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_ORDER_DETAILS" EntityType="Self.TABLE_ORDER_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_PURCHASE" EntityType="Self.TABLE_PURCHASE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_PURCHASE_DETAILS" EntityType="Self.TABLE_PURCHASE_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_PURCHASE_RETURN" EntityType="Self.TABLE_PURCHASE_RETURN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_PURCHASE_RETURN_DETAILS" EntityType="Self.TABLE_PURCHASE_RETURN_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SALES" EntityType="Self.TABLE_SALES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SALES_DETAILS" EntityType="Self.TABLE_SALES_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SALES_RETURN" EntityType="Self.TABLE_SALES_RETURN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SALES_RETURN_DETAILS" EntityType="Self.TABLE_SALES_RETURN_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SUPPLIER" EntityType="Self.TABLE_SUPPLIER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_SYS_USER" EntityType="Self.TABLE_SYS_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_THANA" EntityType="Self.TABLE_THANA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_UNIT" EntityType="Self.TABLE_UNIT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_USER_GROUP" EntityType="Self.TABLE_USER_GROUP" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BRANCH_TYPE">
+          <Key>
+            <PropertyRef Name="BRANCH_TYPE_ID" />
+          </Key>
+          <Property Name="BRANCH_TYPE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRANCH_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="SYSTEM_ACCESS_POLICY">
+          <Key>
+            <PropertyRef Name="SYS_ACCP_ID" />
+          </Key>
+          <Property Name="SYS_ACCP_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SYS_MENU_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SYS_ACCESS_DATE" Type="DateTime" Precision="0" />
+          <Property Name="SYS_ACCESS_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_MENU_FILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_ACCESS_BY" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="SYSTEM_AUDIT_INFO">
+          <Key>
+            <PropertyRef Name="SYS_AUDIT_LOG_ID" />
+          </Key>
+          <Property Name="SYS_AUDIT_LOG_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SYS_USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OPERATION_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_AUDIT_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_DETAILS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_ADDRESS">
+          <Key>
+            <PropertyRef Name="ADDRESS_ID" />
+          </Key>
+          <Property Name="ADDRESS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADDRESS_DETAILS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TABLE_BRANCH_INFO">
+          <Key>
+            <PropertyRef Name="BRANCH_ID" />
+          </Key>
+          <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRANCH_TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_CONTACT_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BRANCH_ADDRESS_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TABLE_CATEGORY">
+          <Key>
+            <PropertyRef Name="CATEGORY_ID" />
+          </Key>
+          <Property Name="CATEGORY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CATEGORY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMER_ID" />
+          </Key>
+          <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISLOGEDIN" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TABLE_DESIGNATION">
+          <Key>
+            <PropertyRef Name="DESIGNATION_ID" />
+          </Key>
+          <Property Name="DESIGNATION_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESIGNATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESIGNATION_CODE" Type="Binary" MaxLength="10" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TABLE_DISTRICT">
+          <Key>
+            <PropertyRef Name="DISTRICT_ID" />
+          </Key>
+          <Property Name="DISTRICT_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DISTRICT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DIVISION_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_DIVISION">
+          <Key>
+            <PropertyRef Name="DIVISION_ID" />
+          </Key>
+          <Property Name="DIVISION_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DIVISION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_EMAIL">
+          <Key>
+            <PropertyRef Name="EMAIL_ID" />
+          </Key>
+          <Property Name="EMAIL_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMAIL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_PERSON_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_GROUP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_ITEM">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ITEM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ITEM_SHORT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ITEM_BARCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORY_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UNIT_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_ORDER">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ORDER_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_ORDER_DETAILS">
+          <Key>
+            <PropertyRef Name="ORDER_DETAILS_ID" />
+          </Key>
+          <Property Name="ORDER_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORDER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ORDER_LIST" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE">
+          <Key>
+            <PropertyRef Name="CHALLAN_NO" />
+          </Key>
+          <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_DETAILS">
+          <Key>
+            <PropertyRef Name="PURCHASE_DETAILS_ID" />
+          </Key>
+          <Property Name="PURCHASE_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PURCHASE_PRICE" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="PURCHASE_QTY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SALES_PRICE" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="REMAIN_QTY" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_RETURN">
+          <Key>
+            <PropertyRef Name="CHALLAN_NO" />
+          </Key>
+          <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_PURCHASE_RETURN_DETAILS">
+          <Key>
+            <PropertyRef Name="PURCHASE_RETURN_DETAILS_ID" />
+          </Key>
+          <Property Name="PURCHASE_RETURN_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RETURN_QTY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RETURN_PRICE" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES">
+          <Key>
+            <PropertyRef Name="BILL_NO" />
+          </Key>
+          <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USERI_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DELIVERY_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_DETAILS">
+          <Key>
+            <PropertyRef Name="SALES_DETAILS_ID" />
+          </Key>
+          <Property Name="SALES_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SALES_QTY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SALES_PRICE" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_RETURN">
+          <Key>
+            <PropertyRef Name="BILL_NO" />
+          </Key>
+          <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RETURN_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TABLE_SALES_RETURN_DETAILS">
+          <Key>
+            <PropertyRef Name="SALES_RETURN_DETAILS_ID" />
+          </Key>
+          <Property Name="SALES_RETURN_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RETURN_QTY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RETURN_PRICE" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="TABLE_SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUPPLIER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TABLE_SYS_USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="USER_FULL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_LOGIN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_LOGIN_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATION_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="USER_DESIGNATION_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_THANA">
+          <Key>
+            <PropertyRef Name="THANA_ID" />
+          </Key>
+          <Property Name="THANA_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="THANA_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="THANA_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_UNIT">
+          <Key>
+            <PropertyRef Name="UNIT_ID" />
+          </Key>
+          <Property Name="UNIT_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UNIT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FreshDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BRANCH_TYPE" EntityType="Self.BRANCH_TYPE" />
+          <EntitySet Name="SYSTEM_ACCESS_POLICY" EntityType="Self.SYSTEM_ACCESS_POLICY" />
+          <EntitySet Name="SYSTEM_AUDIT_INFO" EntityType="Self.SYSTEM_AUDIT_INFO" />
+          <EntitySet Name="TABLE_ADDRESS" EntityType="Self.TABLE_ADDRESS" />
+          <EntitySet Name="TABLE_BRANCH_INFO" EntityType="Self.TABLE_BRANCH_INFO" />
+          <EntitySet Name="TABLE_CATEGORY" EntityType="Self.TABLE_CATEGORY" />
+          <EntitySet Name="TABLE_CUSTOMER" EntityType="Self.TABLE_CUSTOMER" />
+          <EntitySet Name="TABLE_DESIGNATION" EntityType="Self.TABLE_DESIGNATION" />
+          <EntitySet Name="TABLE_DISTRICT" EntityType="Self.TABLE_DISTRICT" />
+          <EntitySet Name="TABLE_DIVISION" EntityType="Self.TABLE_DIVISION" />
+          <EntitySet Name="TABLE_EMAIL" EntityType="Self.TABLE_EMAIL" />
+          <EntitySet Name="TABLE_ITEM" EntityType="Self.TABLE_ITEM" />
+          <EntitySet Name="TABLE_ORDER" EntityType="Self.TABLE_ORDER" />
+          <EntitySet Name="TABLE_ORDER_DETAILS" EntityType="Self.TABLE_ORDER_DETAILS" />
+          <EntitySet Name="TABLE_PURCHASE" EntityType="Self.TABLE_PURCHASE" />
+          <EntitySet Name="TABLE_PURCHASE_DETAILS" EntityType="Self.TABLE_PURCHASE_DETAILS" />
+          <EntitySet Name="TABLE_PURCHASE_RETURN" EntityType="Self.TABLE_PURCHASE_RETURN" />
+          <EntitySet Name="TABLE_PURCHASE_RETURN_DETAILS" EntityType="Self.TABLE_PURCHASE_RETURN_DETAILS" />
+          <EntitySet Name="TABLE_SALES" EntityType="Self.TABLE_SALES" />
+          <EntitySet Name="TABLE_SALES_DETAILS" EntityType="Self.TABLE_SALES_DETAILS" />
+          <EntitySet Name="TABLE_SALES_RETURN" EntityType="Self.TABLE_SALES_RETURN" />
+          <EntitySet Name="TABLE_SALES_RETURN_DETAILS" EntityType="Self.TABLE_SALES_RETURN_DETAILS" />
+          <EntitySet Name="TABLE_SUPPLIER" EntityType="Self.TABLE_SUPPLIER" />
+          <EntitySet Name="TABLE_SYS_USER" EntityType="Self.TABLE_SYS_USER" />
+          <EntitySet Name="TABLE_THANA" EntityType="Self.TABLE_THANA" />
+          <EntitySet Name="TABLE_UNIT" EntityType="Self.TABLE_UNIT" />
+          <EntitySet Name="ITEM_PICTURE" EntityType="EntityModel.ITEM_PICTURE" />
+          <EntitySet Name="ITEM_DISCOUNT" EntityType="EntityModel.ITEM_DISCOUNT" />
+          <EntitySet Name="TABLE_CONTACT_TYPE" EntityType="EntityModel.TABLE_CONTACT_TYPE" />
+          <FunctionImport Name="spPrimaryId">
+            <Parameter Name="TableName" Mode="In" Type="String" />
+            <Parameter Name="FieldName" Mode="In" Type="String" />
+            <Parameter Name="Id" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="spValidateUserLogin">
+            <Parameter Name="LoginID" Mode="In" Type="String" />
+            <Parameter Name="LoginPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TABLE_USER_GROUP" EntityType="EntityModel.TABLE_USER_GROUP" />
+          <EntitySet Name="TABLE_CONTACT" EntityType="EntityModel.TABLE_CONTACT" />
+          <EntitySet Name="LOGIN_INFO" EntityType="EntityModel.LOGIN_INFO" />
+          <EntitySet Name="ITEM_SELECT" EntityType="EntityModel.ITEM_SELECT" />
+        </EntityContainer>
+        <EntityType Name="ITEM_PICTURE">
+          <Key>
+            <PropertyRef Name="PICTURE_ID" />
+          </Key>
+          <Property Name="PICTURE_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PICTURE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PICTURE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CREATION_BY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ITEM_DISCOUNT">
+          <Key>
+            <PropertyRef Name="DISCOUNT_ID" />
+          </Key>
+          <Property Name="DISCOUNT_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="AMOUNT" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ITEM_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="USER_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="TABLE_CONTACT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTACT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTACT_TYPE_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="CONTACT_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_USER_GROUP">
+          <Key>
+            <PropertyRef Name="USER_GROUP_ID" />
+          </Key>
+          <Property Name="USER_GROUP_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_GROUP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_GROUP_SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_GROUP_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TABLE_CONTACT">
+          <Key>
+            <PropertyRef Name="CONTACT_ID" />
+          </Key>
+          <Property Name="CONTACT_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONTACT_TYPE_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CONTACT_INFO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_PERSON_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="LOGIN_INFO">
+          <Key>
+            <PropertyRef Name="LOGIN_INFO_ID" />
+          </Key>
+          <Property Name="LOGIN_INFO_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TIME" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="ITEM_SELECT">
+          <Key>
+            <PropertyRef Name="SelectedId" />
+          </Key>
+          <Property Name="SelectedId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="name" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="pic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="discount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="totalDiscount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="availableQuantity" Type="Int32" />
+          <Property Name="CustomerID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntityModelStoreContainer" CdmEntityContainer="FreshDBEntities">
+          <EntitySetMapping Name="BRANCH_TYPE">
+            <EntityTypeMapping TypeName="EntityModel.BRANCH_TYPE">
+              <MappingFragment StoreEntitySet="BRANCH_TYPE">
+                <ScalarProperty Name="BRANCH_TYPE_ID" ColumnName="BRANCH_TYPE_ID" />
+                <ScalarProperty Name="BRANCH_TYPE_NAME" ColumnName="BRANCH_TYPE_NAME" />
+                <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYSTEM_ACCESS_POLICY">
+            <EntityTypeMapping TypeName="EntityModel.SYSTEM_ACCESS_POLICY">
+              <MappingFragment StoreEntitySet="SYSTEM_ACCESS_POLICY">
+                <ScalarProperty Name="SYS_ACCP_ID" ColumnName="SYS_ACCP_ID" />
+                <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="SYS_MENU_ID" ColumnName="SYS_MENU_ID" />
+                <ScalarProperty Name="SYS_ACCESS_DATE" ColumnName="SYS_ACCESS_DATE" />
+                <ScalarProperty Name="SYS_ACCESS_TITLE" ColumnName="SYS_ACCESS_TITLE" />
+                <ScalarProperty Name="SYS_MENU_FILE" ColumnName="SYS_MENU_FILE" />
+                <ScalarProperty Name="SYS_ACCESS_BY" ColumnName="SYS_ACCESS_BY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYSTEM_AUDIT_INFO">
+            <EntityTypeMapping TypeName="EntityModel.SYSTEM_AUDIT_INFO">
+              <MappingFragment StoreEntitySet="SYSTEM_AUDIT_INFO">
+                <ScalarProperty Name="SYS_AUDIT_LOG_ID" ColumnName="SYS_AUDIT_LOG_ID" />
+                <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+                <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+                <ScalarProperty Name="SYS_AUDIT_NOTE" ColumnName="SYS_AUDIT_NOTE" />
+                <ScalarProperty Name="OPERATION_BY" ColumnName="OPERATION_BY" />
+                <ScalarProperty Name="OPERATION_DETAILS" ColumnName="OPERATION_DETAILS" />
+                <ScalarProperty Name="OPERATION_DATE" ColumnName="OPERATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_ADDRESS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_ADDRESS">
+              <MappingFragment StoreEntitySet="TABLE_ADDRESS">
+                <ScalarProperty Name="ADDRESS_ID" ColumnName="ADDRESS_ID" />
+                <ScalarProperty Name="ADDRESS_DETAILS" ColumnName="ADDRESS_DETAILS" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_BRANCH_INFO">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_BRANCH_INFO">
+              <MappingFragment StoreEntitySet="TABLE_BRANCH_INFO">
+                <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+                <ScalarProperty Name="BRANCH_TITLE" ColumnName="BRANCH_TITLE" />
+                <ScalarProperty Name="BRANCH_SHORT_NAME" ColumnName="BRANCH_SHORT_NAME" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="BRANCH_CONTACT_ID" ColumnName="BRANCH_CONTACT_ID" />
+                <ScalarProperty Name="BRANCH_ADDRESS_ID" ColumnName="BRANCH_ADDRESS_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_CATEGORY">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_CATEGORY">
+              <MappingFragment StoreEntitySet="TABLE_CATEGORY">
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="CATEGORY_NAME" ColumnName="CATEGORY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_CUSTOMER">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_CUSTOMER">
+              <MappingFragment StoreEntitySet="TABLE_CUSTOMER">
+                <ScalarProperty Name="ISLOGEDIN" ColumnName="ISLOGEDIN" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_DESIGNATION">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_DESIGNATION">
+              <MappingFragment StoreEntitySet="TABLE_DESIGNATION">
+                <ScalarProperty Name="DESIGNATION_ID" ColumnName="DESIGNATION_ID" />
+                <ScalarProperty Name="DESIGNATION_NAME" ColumnName="DESIGNATION_NAME" />
+                <ScalarProperty Name="DESIGNATION_CODE" ColumnName="DESIGNATION_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_DISTRICT">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_DISTRICT">
+              <MappingFragment StoreEntitySet="TABLE_DISTRICT">
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+                <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+                <ScalarProperty Name="DIVISION_ID" ColumnName="DIVISION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_DIVISION">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_DIVISION">
+              <MappingFragment StoreEntitySet="TABLE_DIVISION">
+                <ScalarProperty Name="DIVISION_ID" ColumnName="DIVISION_ID" />
+                <ScalarProperty Name="DIVISION_NAME" ColumnName="DIVISION_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_EMAIL">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_EMAIL">
+              <MappingFragment StoreEntitySet="TABLE_EMAIL">
+                <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+                <ScalarProperty Name="EMAIL_NAME" ColumnName="EMAIL_NAME" />
+                <ScalarProperty Name="EMAIL_PERSON_ID" ColumnName="EMAIL_PERSON_ID" />
+                <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_ITEM">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_ITEM">
+              <MappingFragment StoreEntitySet="TABLE_ITEM">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_SHORT_CODE" ColumnName="ITEM_SHORT_CODE" />
+                <ScalarProperty Name="ITEM_BARCODE" ColumnName="ITEM_BARCODE" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_ORDER">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_ORDER">
+              <MappingFragment StoreEntitySet="TABLE_ORDER">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+                <ScalarProperty Name="DELIVERY_DATE" ColumnName="DELIVERY_DATE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_ORDER_DETAILS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_ORDER_DETAILS">
+              <MappingFragment StoreEntitySet="TABLE_ORDER_DETAILS">
+                <ScalarProperty Name="ORDER_DETAILS_ID" ColumnName="ORDER_DETAILS_ID" />
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="ORDER_LIST" ColumnName="ORDER_LIST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_PURCHASE">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE">
+              <MappingFragment StoreEntitySet="TABLE_PURCHASE">
+                <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_PURCHASE_DETAILS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_DETAILS">
+              <MappingFragment StoreEntitySet="TABLE_PURCHASE_DETAILS">
+                <ScalarProperty Name="REMAIN_QTY" ColumnName="REMAIN_QTY" />
+                <ScalarProperty Name="PURCHASE_DETAILS_ID" ColumnName="PURCHASE_DETAILS_ID" />
+                <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
+                <ScalarProperty Name="PURCHASE_QTY" ColumnName="PURCHASE_QTY" />
+                <ScalarProperty Name="SALES_PRICE" ColumnName="SALES_PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_PURCHASE_RETURN">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_RETURN">
+              <MappingFragment StoreEntitySet="TABLE_PURCHASE_RETURN">
+                <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_PURCHASE_RETURN_DETAILS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_RETURN_DETAILS">
+              <MappingFragment StoreEntitySet="TABLE_PURCHASE_RETURN_DETAILS">
+                <ScalarProperty Name="PURCHASE_RETURN_DETAILS_ID" ColumnName="PURCHASE_RETURN_DETAILS_ID" />
+                <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="RETURN_QTY" ColumnName="RETURN_QTY" />
+                <ScalarProperty Name="RETURN_PRICE" ColumnName="RETURN_PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SALES">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SALES">
+              <MappingFragment StoreEntitySet="TABLE_SALES">
+                <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="USERI_ID" ColumnName="USERI_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+                <ScalarProperty Name="DELIVERY_DATE" ColumnName="DELIVERY_DATE" />
+                <ScalarProperty Name="DELIVERY_STATUS" ColumnName="DELIVERY_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SALES_DETAILS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_DETAILS">
+              <MappingFragment StoreEntitySet="TABLE_SALES_DETAILS">
+                <ScalarProperty Name="SALES_DETAILS_ID" ColumnName="SALES_DETAILS_ID" />
+                <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="SALES_QTY" ColumnName="SALES_QTY" />
+                <ScalarProperty Name="SALES_PRICE" ColumnName="SALES_PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SALES_RETURN">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_RETURN">
+              <MappingFragment StoreEntitySet="TABLE_SALES_RETURN">
+                <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+                <ScalarProperty Name="RETURN_DATE" ColumnName="RETURN_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SALES_RETURN_DETAILS">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_RETURN_DETAILS">
+              <MappingFragment StoreEntitySet="TABLE_SALES_RETURN_DETAILS">
+                <ScalarProperty Name="SALES_RETURN_DETAILS_ID" ColumnName="SALES_RETURN_DETAILS_ID" />
+                <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="RETURN_QTY" ColumnName="RETURN_QTY" />
+                <ScalarProperty Name="RETURN_PRICE" ColumnName="RETURN_PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SUPPLIER">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SUPPLIER">
+              <MappingFragment StoreEntitySet="TABLE_SUPPLIER">
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_SYS_USER">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_SYS_USER">
+              <MappingFragment StoreEntitySet="TABLE_SYS_USER">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="USER_FULL_NAME" ColumnName="USER_FULL_NAME" />
+                <ScalarProperty Name="USER_LOGIN_NAME" ColumnName="USER_LOGIN_NAME" />
+                <ScalarProperty Name="USER_LOGIN_PASSWORD" ColumnName="USER_LOGIN_PASSWORD" />
+                <ScalarProperty Name="CREATION_ID" ColumnName="CREATION_ID" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="USER_DESIGNATION_ID" ColumnName="USER_DESIGNATION_ID" />
+                <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+                <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_THANA">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_THANA">
+              <MappingFragment StoreEntitySet="TABLE_THANA">
+                <ScalarProperty Name="THANA_ID" ColumnName="THANA_ID" />
+                <ScalarProperty Name="THANA_NAME" ColumnName="THANA_NAME" />
+                <ScalarProperty Name="THANA_CODE" ColumnName="THANA_CODE" />
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_UNIT">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_UNIT">
+              <MappingFragment StoreEntitySet="TABLE_UNIT">
+                <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+                <ScalarProperty Name="UNIT_NAME" ColumnName="UNIT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_PICTURE">
+            <EntityTypeMapping TypeName="EntityModel.ITEM_PICTURE">
+              <MappingFragment StoreEntitySet="ITEM_PICTURE">
+                <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+                <ScalarProperty Name="CREATION_BY" ColumnName="CREATION_BY" />
+                <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="PICTURE_NAME" ColumnName="PICTURE_NAME" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PICTURE_ID" ColumnName="PICTURE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_DISCOUNT">
+            <EntityTypeMapping TypeName="EntityModel.ITEM_DISCOUNT">
+              <MappingFragment StoreEntitySet="ITEM_DISCOUNT">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="DISCOUNT_ID" ColumnName="DISCOUNT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_CONTACT_TYPE">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_CONTACT_TYPE">
+              <MappingFragment StoreEntitySet="TABLE_CONTACT_TYPE">
+                <ScalarProperty Name="CONTACT_TYPE_NAME" ColumnName="CONTACT_TYPE_NAME" />
+                <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spPrimaryId" FunctionName="EntityModel.Store.spPrimaryId" />
+          <FunctionImportMapping FunctionImportName="spValidateUserLogin" FunctionName="EntityModel.Store.spValidateUserLogin" />
+          <EntitySetMapping Name="TABLE_USER_GROUP">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_USER_GROUP">
+              <MappingFragment StoreEntitySet="TABLE_USER_GROUP">
+                <ScalarProperty Name="USER_GROUP_CODE" ColumnName="USER_GROUP_CODE" />
+                <ScalarProperty Name="USER_GROUP_SHORT_NAME" ColumnName="USER_GROUP_SHORT_NAME" />
+                <ScalarProperty Name="USER_GROUP_NAME" ColumnName="USER_GROUP_NAME" />
+                <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_CONTACT">
+            <EntityTypeMapping TypeName="EntityModel.TABLE_CONTACT">
+              <MappingFragment StoreEntitySet="TABLE_CONTACT">
+                <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+                <ScalarProperty Name="CONTACT_PERSON_ID" ColumnName="CONTACT_PERSON_ID" />
+                <ScalarProperty Name="CONTACT_INFO" ColumnName="CONTACT_INFO" />
+                <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGIN_INFO">
+            <EntityTypeMapping TypeName="EntityModel.LOGIN_INFO">
+              <MappingFragment StoreEntitySet="LOGIN_INFO">
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="IP_ADDRESS" ColumnName="IP_ADDRESS" />
+                <ScalarProperty Name="LOGIN_INFO_ID" ColumnName="LOGIN_INFO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_SELECT">
+            <EntityTypeMapping TypeName="EntityModel.ITEM_SELECT">
+              <MappingFragment StoreEntitySet="ITEM_SELECT">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="availableQuantity" ColumnName="availableQuantity" />
+                <ScalarProperty Name="totalDiscount" ColumnName="totalDiscount" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SelectedId" ColumnName="SelectedId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EntityModelStoreContainer" CdmEntityContainer="FreshDBEntities">
+    <EntitySetMapping Name="BRANCH_TYPE">
+      <EntityTypeMapping TypeName="EntityModel.BRANCH_TYPE">
+        <MappingFragment StoreEntitySet="BRANCH_TYPE">
+          <ScalarProperty Name="BRANCH_TYPE_ID" ColumnName="BRANCH_TYPE_ID" />
+          <ScalarProperty Name="BRANCH_TYPE_NAME" ColumnName="BRANCH_TYPE_NAME" />
+          <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSTEM_ACCESS_POLICY">
+      <EntityTypeMapping TypeName="EntityModel.SYSTEM_ACCESS_POLICY">
+        <MappingFragment StoreEntitySet="SYSTEM_ACCESS_POLICY">
+          <ScalarProperty Name="SYS_ACCP_ID" ColumnName="SYS_ACCP_ID" />
+          <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="SYS_MENU_ID" ColumnName="SYS_MENU_ID" />
+          <ScalarProperty Name="SYS_ACCESS_DATE" ColumnName="SYS_ACCESS_DATE" />
+          <ScalarProperty Name="SYS_ACCESS_TITLE" ColumnName="SYS_ACCESS_TITLE" />
+          <ScalarProperty Name="SYS_MENU_FILE" ColumnName="SYS_MENU_FILE" />
+          <ScalarProperty Name="SYS_ACCESS_BY" ColumnName="SYS_ACCESS_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSTEM_AUDIT_INFO">
+      <EntityTypeMapping TypeName="EntityModel.SYSTEM_AUDIT_INFO">
+        <MappingFragment StoreEntitySet="SYSTEM_AUDIT_INFO">
+          <ScalarProperty Name="SYS_AUDIT_LOG_ID" ColumnName="SYS_AUDIT_LOG_ID" />
+          <ScalarProperty Name="SYS_USER_ID" ColumnName="SYS_USER_ID" />
+          <ScalarProperty Name="OPERATION_TYPE" ColumnName="OPERATION_TYPE" />
+          <ScalarProperty Name="SYS_AUDIT_NOTE" ColumnName="SYS_AUDIT_NOTE" />
+          <ScalarProperty Name="OPERATION_BY" ColumnName="OPERATION_BY" />
+          <ScalarProperty Name="OPERATION_DETAILS" ColumnName="OPERATION_DETAILS" />
+          <ScalarProperty Name="OPERATION_DATE" ColumnName="OPERATION_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_ADDRESS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_ADDRESS">
+        <MappingFragment StoreEntitySet="TABLE_ADDRESS">
+          <ScalarProperty Name="ADDRESS_ID" ColumnName="ADDRESS_ID" />
+          <ScalarProperty Name="ADDRESS_DETAILS" ColumnName="ADDRESS_DETAILS" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_BRANCH_INFO">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_BRANCH_INFO">
+        <MappingFragment StoreEntitySet="TABLE_BRANCH_INFO">
+          <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+          <ScalarProperty Name="BRANCH_TITLE" ColumnName="BRANCH_TITLE" />
+          <ScalarProperty Name="BRANCH_SHORT_NAME" ColumnName="BRANCH_SHORT_NAME" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="BRANCH_CONTACT_ID" ColumnName="BRANCH_CONTACT_ID" />
+          <ScalarProperty Name="BRANCH_ADDRESS_ID" ColumnName="BRANCH_ADDRESS_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_CATEGORY">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_CATEGORY">
+        <MappingFragment StoreEntitySet="TABLE_CATEGORY">
+          <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="CATEGORY_NAME" ColumnName="CATEGORY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_CUSTOMER">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_CUSTOMER">
+        <MappingFragment StoreEntitySet="TABLE_CUSTOMER">
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_DESIGNATION">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_DESIGNATION">
+        <MappingFragment StoreEntitySet="TABLE_DESIGNATION">
+          <ScalarProperty Name="DESIGNATION_ID" ColumnName="DESIGNATION_ID" />
+          <ScalarProperty Name="DESIGNATION_NAME" ColumnName="DESIGNATION_NAME" />
+          <ScalarProperty Name="DESIGNATION_CODE" ColumnName="DESIGNATION_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_DISTRICT">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_DISTRICT">
+        <MappingFragment StoreEntitySet="TABLE_DISTRICT">
+          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+          <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+          <ScalarProperty Name="DIVISION_ID" ColumnName="DIVISION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_DIVISION">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_DIVISION">
+        <MappingFragment StoreEntitySet="TABLE_DIVISION">
+          <ScalarProperty Name="DIVISION_ID" ColumnName="DIVISION_ID" />
+          <ScalarProperty Name="DIVISION_NAME" ColumnName="DIVISION_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_EMAIL">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_EMAIL">
+        <MappingFragment StoreEntitySet="TABLE_EMAIL">
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="EMAIL_NAME" ColumnName="EMAIL_NAME" />
+          <ScalarProperty Name="EMAIL_PERSON_ID" ColumnName="EMAIL_PERSON_ID" />
+          <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_ITEM">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_ITEM">
+        <MappingFragment StoreEntitySet="TABLE_ITEM">
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_SHORT_CODE" ColumnName="ITEM_SHORT_CODE" />
+          <ScalarProperty Name="ITEM_BARCODE" ColumnName="ITEM_BARCODE" />
+          <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_ORDER">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_ORDER">
+        <MappingFragment StoreEntitySet="TABLE_ORDER">
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+          <ScalarProperty Name="DELIVERY_DATE" ColumnName="DELIVERY_DATE" />
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_ORDER_DETAILS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_ORDER_DETAILS">
+        <MappingFragment StoreEntitySet="TABLE_ORDER_DETAILS">
+          <ScalarProperty Name="ORDER_DETAILS_ID" ColumnName="ORDER_DETAILS_ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="ORDER_LIST" ColumnName="ORDER_LIST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_PURCHASE">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE">
+        <MappingFragment StoreEntitySet="TABLE_PURCHASE">
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_PURCHASE_DETAILS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_DETAILS">
+        <MappingFragment StoreEntitySet="TABLE_PURCHASE_DETAILS">
+          <ScalarProperty Name="REMAIN_QTY" ColumnName="REMAIN_QTY" />
+          <ScalarProperty Name="PURCHASE_DETAILS_ID" ColumnName="PURCHASE_DETAILS_ID" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
+          <ScalarProperty Name="PURCHASE_QTY" ColumnName="PURCHASE_QTY" />
+          <ScalarProperty Name="SALES_PRICE" ColumnName="SALES_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_PURCHASE_RETURN">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_RETURN">
+        <MappingFragment StoreEntitySet="TABLE_PURCHASE_RETURN">
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_PURCHASE_RETURN_DETAILS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_PURCHASE_RETURN_DETAILS">
+        <MappingFragment StoreEntitySet="TABLE_PURCHASE_RETURN_DETAILS">
+          <ScalarProperty Name="PURCHASE_RETURN_DETAILS_ID" ColumnName="PURCHASE_RETURN_DETAILS_ID" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="RETURN_QTY" ColumnName="RETURN_QTY" />
+          <ScalarProperty Name="RETURN_PRICE" ColumnName="RETURN_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SALES">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SALES">
+        <MappingFragment StoreEntitySet="TABLE_SALES">
+          <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="USERI_ID" ColumnName="USERI_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+          <ScalarProperty Name="DELIVERY_DATE" ColumnName="DELIVERY_DATE" />
+          <ScalarProperty Name="DELIVERY_STATUS" ColumnName="DELIVERY_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SALES_DETAILS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_DETAILS">
+        <MappingFragment StoreEntitySet="TABLE_SALES_DETAILS">
+          <ScalarProperty Name="SALES_DETAILS_ID" ColumnName="SALES_DETAILS_ID" />
+          <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="SALES_QTY" ColumnName="SALES_QTY" />
+          <ScalarProperty Name="SALES_PRICE" ColumnName="SALES_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SALES_RETURN">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_RETURN">
+        <MappingFragment StoreEntitySet="TABLE_SALES_RETURN">
+          <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+          <ScalarProperty Name="RETURN_DATE" ColumnName="RETURN_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SALES_RETURN_DETAILS">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SALES_RETURN_DETAILS">
+        <MappingFragment StoreEntitySet="TABLE_SALES_RETURN_DETAILS">
+          <ScalarProperty Name="SALES_RETURN_DETAILS_ID" ColumnName="SALES_RETURN_DETAILS_ID" />
+          <ScalarProperty Name="BILL_NO" ColumnName="BILL_NO" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="RETURN_QTY" ColumnName="RETURN_QTY" />
+          <ScalarProperty Name="RETURN_PRICE" ColumnName="RETURN_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SUPPLIER">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SUPPLIER">
+        <MappingFragment StoreEntitySet="TABLE_SUPPLIER">
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_SYS_USER">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_SYS_USER">
+        <MappingFragment StoreEntitySet="TABLE_SYS_USER">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USER_FULL_NAME" ColumnName="USER_FULL_NAME" />
+          <ScalarProperty Name="USER_LOGIN_NAME" ColumnName="USER_LOGIN_NAME" />
+          <ScalarProperty Name="USER_LOGIN_PASSWORD" ColumnName="USER_LOGIN_PASSWORD" />
+          <ScalarProperty Name="CREATION_ID" ColumnName="CREATION_ID" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="USER_DESIGNATION_ID" ColumnName="USER_DESIGNATION_ID" />
+          <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+          <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_THANA">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_THANA">
+        <MappingFragment StoreEntitySet="TABLE_THANA">
+          <ScalarProperty Name="THANA_ID" ColumnName="THANA_ID" />
+          <ScalarProperty Name="THANA_NAME" ColumnName="THANA_NAME" />
+          <ScalarProperty Name="THANA_CODE" ColumnName="THANA_CODE" />
+          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_UNIT">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_UNIT">
+        <MappingFragment StoreEntitySet="TABLE_UNIT">
+          <ScalarProperty Name="UNIT_ID" ColumnName="UNIT_ID" />
+          <ScalarProperty Name="UNIT_NAME" ColumnName="UNIT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_USER_GROUP">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_USER_GROUP">
+        <MappingFragment StoreEntitySet="TABLE_USER_GROUP">
+          <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+          <ScalarProperty Name="USER_GROUP_NAME" ColumnName="USER_GROUP_NAME" />
+          <ScalarProperty Name="USER_GROUP_SHORT_NAME" ColumnName="USER_GROUP_SHORT_NAME" />
+          <ScalarProperty Name="USER_GROUP_CODE" ColumnName="USER_GROUP_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM_PICTURE">
+      <EntityTypeMapping TypeName="EntityModel.ITEM_PICTURE">
+        <MappingFragment StoreEntitySet="ITEM_PICTURE">
+          <ScalarProperty Name="COMPUTER_NAME" ColumnName="COMPUTER_NAME" />
+          <ScalarProperty Name="CREATION_BY" ColumnName="CREATION_BY" />
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="PICTURE_NAME" ColumnName="PICTURE_NAME" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="PICTURE_ID" ColumnName="PICTURE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_CONTACT">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_CONTACT">
+        <MappingFragment StoreEntitySet="TABLE_CONTACT">
+          <ScalarProperty Name="USER_GROUP_ID" ColumnName="USER_GROUP_ID" />
+          <ScalarProperty Name="CONTACT_PERSON_ID" ColumnName="CONTACT_PERSON_ID" />
+          <ScalarProperty Name="CONTACT_INFO" ColumnName="CONTACT_INFO" />
+          <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM_DISCOUNT">
+      <EntityTypeMapping TypeName="EntityModel.ITEM_DISCOUNT">
+        <MappingFragment StoreEntitySet="ITEM_DISCOUNT">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="DISCOUNT_ID" ColumnName="DISCOUNT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_CONTACT_TYPE">
+      <EntityTypeMapping TypeName="EntityModel.TABLE_CONTACT_TYPE">
+        <MappingFragment StoreEntitySet="TABLE_CONTACT_TYPE">
+          <ScalarProperty Name="CONTACT_TYPE_NAME" ColumnName="CONTACT_TYPE_NAME" />
+          <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

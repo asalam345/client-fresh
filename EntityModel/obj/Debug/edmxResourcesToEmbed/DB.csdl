@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BRANCH_TYPE">
+    <Key>
+      <PropertyRef Name="BRANCH_TYPE_ID" />
+    </Key>
+    <Property Name="BRANCH_TYPE_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="SYSTEM_ACCESS_POLICY">
+    <Key>
+      <PropertyRef Name="SYS_ACCP_ID" />
+    </Key>
+    <Property Name="SYS_ACCP_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYS_MENU_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SYS_ACCESS_DATE" Type="DateTime" Precision="0" />
+    <Property Name="SYS_ACCESS_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_MENU_FILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_ACCESS_BY" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="SYSTEM_AUDIT_INFO">
+    <Key>
+      <PropertyRef Name="SYS_AUDIT_LOG_ID" />
+    </Key>
+    <Property Name="SYS_AUDIT_LOG_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYS_USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OPERATION_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_AUDIT_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPERATION_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPERATION_DETAILS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OPERATION_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_ADDRESS">
+    <Key>
+      <PropertyRef Name="ADDRESS_ID" />
+    </Key>
+    <Property Name="ADDRESS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADDRESS_DETAILS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CUSTOMER_ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TABLE_BRANCH_INFO">
+    <Key>
+      <PropertyRef Name="BRANCH_ID" />
+    </Key>
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_CONTACT_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BRANCH_ADDRESS_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TABLE_CATEGORY">
+    <Key>
+      <PropertyRef Name="CATEGORY_ID" />
+    </Key>
+    <Property Name="CATEGORY_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_CUSTOMER">
+    <Key>
+      <PropertyRef Name="CUSTOMER_ID" />
+    </Key>
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISLOGEDIN" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TABLE_DESIGNATION">
+    <Key>
+      <PropertyRef Name="DESIGNATION_ID" />
+    </Key>
+    <Property Name="DESIGNATION_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESIGNATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESIGNATION_CODE" Type="Binary" MaxLength="10" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TABLE_DISTRICT">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DISTRICT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DIVISION_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_DIVISION">
+    <Key>
+      <PropertyRef Name="DIVISION_ID" />
+    </Key>
+    <Property Name="DIVISION_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DIVISION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_EMAIL">
+    <Key>
+      <PropertyRef Name="EMAIL_ID" />
+    </Key>
+    <Property Name="EMAIL_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMAIL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_PERSON_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_GROUP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_ITEM">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ITEM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_SHORT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_BARCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CATEGORY_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UNIT_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_ORDER">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ORDER_DATE" Type="DateTime" Precision="0" />
+    <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_ORDER_DETAILS">
+    <Key>
+      <PropertyRef Name="ORDER_DETAILS_ID" />
+    </Key>
+    <Property Name="ORDER_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ORDER_LIST" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TABLE_PURCHASE">
+    <Key>
+      <PropertyRef Name="CHALLAN_NO" />
+    </Key>
+    <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_PURCHASE_DETAILS">
+    <Key>
+      <PropertyRef Name="PURCHASE_DETAILS_ID" />
+    </Key>
+    <Property Name="PURCHASE_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PURCHASE_PRICE" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="PURCHASE_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SALES_PRICE" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="REMAIN_QTY" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_PURCHASE_RETURN">
+    <Key>
+      <PropertyRef Name="CHALLAN_NO" />
+    </Key>
+    <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_PURCHASE_RETURN_DETAILS">
+    <Key>
+      <PropertyRef Name="PURCHASE_RETURN_DETAILS_ID" />
+    </Key>
+    <Property Name="PURCHASE_RETURN_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHALLAN_NO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RETURN_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RETURN_PRICE" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="TABLE_SALES">
+    <Key>
+      <PropertyRef Name="BILL_NO" />
+    </Key>
+    <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USERI_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
+    <Property Name="DELIVERY_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_SALES_DETAILS">
+    <Key>
+      <PropertyRef Name="SALES_DETAILS_ID" />
+    </Key>
+    <Property Name="SALES_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SALES_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SALES_PRICE" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="TABLE_SALES_RETURN">
+    <Key>
+      <PropertyRef Name="BILL_NO" />
+    </Key>
+    <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RETURN_DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TABLE_SALES_RETURN_DETAILS">
+    <Key>
+      <PropertyRef Name="SALES_RETURN_DETAILS_ID" />
+    </Key>
+    <Property Name="SALES_RETURN_DETAILS_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BILL_NO" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RETURN_QTY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RETURN_PRICE" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="TABLE_SUPPLIER">
+    <Key>
+      <PropertyRef Name="SUPPLIER_ID" />
+    </Key>
+    <Property Name="SUPPLIER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUPPLIER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TABLE_SYS_USER">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="USER_FULL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_LOGIN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_LOGIN_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATION_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="USER_DESIGNATION_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="BRANCH_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_THANA">
+    <Key>
+      <PropertyRef Name="THANA_ID" />
+    </Key>
+    <Property Name="THANA_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="THANA_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="THANA_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_UNIT">
+    <Key>
+      <PropertyRef Name="UNIT_ID" />
+    </Key>
+    <Property Name="UNIT_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UNIT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="FreshDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BRANCH_TYPE" EntityType="Self.BRANCH_TYPE" />
+    <EntitySet Name="SYSTEM_ACCESS_POLICY" EntityType="Self.SYSTEM_ACCESS_POLICY" />
+    <EntitySet Name="SYSTEM_AUDIT_INFO" EntityType="Self.SYSTEM_AUDIT_INFO" />
+    <EntitySet Name="TABLE_ADDRESS" EntityType="Self.TABLE_ADDRESS" />
+    <EntitySet Name="TABLE_BRANCH_INFO" EntityType="Self.TABLE_BRANCH_INFO" />
+    <EntitySet Name="TABLE_CATEGORY" EntityType="Self.TABLE_CATEGORY" />
+    <EntitySet Name="TABLE_CUSTOMER" EntityType="Self.TABLE_CUSTOMER" />
+    <EntitySet Name="TABLE_DESIGNATION" EntityType="Self.TABLE_DESIGNATION" />
+    <EntitySet Name="TABLE_DISTRICT" EntityType="Self.TABLE_DISTRICT" />
+    <EntitySet Name="TABLE_DIVISION" EntityType="Self.TABLE_DIVISION" />
+    <EntitySet Name="TABLE_EMAIL" EntityType="Self.TABLE_EMAIL" />
+    <EntitySet Name="TABLE_ITEM" EntityType="Self.TABLE_ITEM" />
+    <EntitySet Name="TABLE_ORDER" EntityType="Self.TABLE_ORDER" />
+    <EntitySet Name="TABLE_ORDER_DETAILS" EntityType="Self.TABLE_ORDER_DETAILS" />
+    <EntitySet Name="TABLE_PURCHASE" EntityType="Self.TABLE_PURCHASE" />
+    <EntitySet Name="TABLE_PURCHASE_DETAILS" EntityType="Self.TABLE_PURCHASE_DETAILS" />
+    <EntitySet Name="TABLE_PURCHASE_RETURN" EntityType="Self.TABLE_PURCHASE_RETURN" />
+    <EntitySet Name="TABLE_PURCHASE_RETURN_DETAILS" EntityType="Self.TABLE_PURCHASE_RETURN_DETAILS" />
+    <EntitySet Name="TABLE_SALES" EntityType="Self.TABLE_SALES" />
+    <EntitySet Name="TABLE_SALES_DETAILS" EntityType="Self.TABLE_SALES_DETAILS" />
+    <EntitySet Name="TABLE_SALES_RETURN" EntityType="Self.TABLE_SALES_RETURN" />
+    <EntitySet Name="TABLE_SALES_RETURN_DETAILS" EntityType="Self.TABLE_SALES_RETURN_DETAILS" />
+    <EntitySet Name="TABLE_SUPPLIER" EntityType="Self.TABLE_SUPPLIER" />
+    <EntitySet Name="TABLE_SYS_USER" EntityType="Self.TABLE_SYS_USER" />
+    <EntitySet Name="TABLE_THANA" EntityType="Self.TABLE_THANA" />
+    <EntitySet Name="TABLE_UNIT" EntityType="Self.TABLE_UNIT" />
+    <EntitySet Name="ITEM_PICTURE" EntityType="EntityModel.ITEM_PICTURE" />
+    <EntitySet Name="ITEM_DISCOUNT" EntityType="EntityModel.ITEM_DISCOUNT" />
+    <EntitySet Name="TABLE_CONTACT_TYPE" EntityType="EntityModel.TABLE_CONTACT_TYPE" />
+    <FunctionImport Name="spPrimaryId">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+      <Parameter Name="FieldName" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="InOut" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="spValidateUserLogin">
+      <Parameter Name="LoginID" Mode="In" Type="String" />
+      <Parameter Name="LoginPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TABLE_USER_GROUP" EntityType="EntityModel.TABLE_USER_GROUP" />
+    <EntitySet Name="TABLE_CONTACT" EntityType="EntityModel.TABLE_CONTACT" />
+    <EntitySet Name="LOGIN_INFO" EntityType="EntityModel.LOGIN_INFO" />
+    <EntitySet Name="ITEM_SELECT" EntityType="EntityModel.ITEM_SELECT" />
+  </EntityContainer>
+  <EntityType Name="ITEM_PICTURE">
+    <Key>
+      <PropertyRef Name="PICTURE_ID" />
+    </Key>
+    <Property Name="PICTURE_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ITEM_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PICTURE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PICTURE" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CREATION_DATE" Type="DateTime" Precision="0" />
+    <Property Name="CREATION_BY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITEM_DISCOUNT">
+    <Key>
+      <PropertyRef Name="DISCOUNT_ID" />
+    </Key>
+    <Property Name="DISCOUNT_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="AMOUNT" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ITEM_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DATE" Type="DateTime" Precision="0" />
+    <Property Name="USER_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TABLE_CONTACT_TYPE">
+    <Key>
+      <PropertyRef Name="CONTACT_TYPE_ID" />
+    </Key>
+    <Property Name="CONTACT_TYPE_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="CONTACT_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_USER_GROUP">
+    <Key>
+      <PropertyRef Name="USER_GROUP_ID" />
+    </Key>
+    <Property Name="USER_GROUP_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_GROUP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_GROUP_SHORT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_GROUP_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TABLE_CONTACT">
+    <Key>
+      <PropertyRef Name="CONTACT_ID" />
+    </Key>
+    <Property Name="CONTACT_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTACT_TYPE_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CONTACT_INFO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_PERSON_ID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="USER_GROUP_ID" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="LOGIN_INFO">
+    <Key>
+      <PropertyRef Name="LOGIN_INFO_ID" />
+    </Key>
+    <Property Name="LOGIN_INFO_ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TIME" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="ITEM_SELECT">
+    <Key>
+      <PropertyRef Name="SelectedId" />
+    </Key>
+    <Property Name="SelectedId" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="name" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="pic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="discount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="totalDiscount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="availableQuantity" Type="Int32" />
+    <Property Name="CustomerID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+</Schema>

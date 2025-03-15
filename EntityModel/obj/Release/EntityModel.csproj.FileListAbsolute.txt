@@ -1,0 +1,9 @@
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityModel.dll.config
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityModel.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityModel.pdb
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityFramework.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityFramework.SqlServer.dll
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityFramework.xml
+E:\GitHub\Clients\Fresh\EntityModel\bin\Release\EntityFramework.SqlServer.xml
+E:\GitHub\Clients\Fresh\EntityModel\obj\Release\EntityModel.dll
+E:\GitHub\Clients\Fresh\EntityModel\obj\Release\EntityModel.pdb
