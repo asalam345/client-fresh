@@ -1,0 +1,183 @@
+ .bg-custom-1 {
+            background-color: #85144b;
+        }
+
+        .bg-custom-2 {
+            background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+        }
+
+        .dropdown-menu {
+            left: -80px;
+        }
+
+        .has-search .form-control {
+            padding: .375rem 10% .75rem .375rem;
+            /*border-radius: 5px;*/
+            background-color: rgba(81, 81, 81, 0.5);
+            border: none;
+        }
+
+        .has-search .form-control-feedback {
+            position: absolute;
+            z-index: 99;
+            display: block;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #000;
+            float: right;
+            right: 2%;
+        }
+
+        .busi-btn {
+            border-radius: 0px;
+            color: #003333 !important;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .busi-btn:hover {
+            border-radius: 0px;
+            color: #ff3c2d !important;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .busi-btn-active,
+        .busi-btn-active:hover {
+            border-radius: 0px;
+            color: #ff3c2d !important;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+
+        .hom_nav_btn_red {
+            /* sign-up button  */
+            border-radius: 0px;
+            background-color: #ff3333;
+            /* red color */
+            border: 0px !important;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 7px 30px;
+            margin: 0 -25px;
+        }
+
+        .hom_nav_btn {
+            border-radius: 0px;
+            color: #003333 !important;
+            /* blue color */
+            font-size: 18px;
+            font-weight: 400;
+            padding: 7px 30px;
+        }
+
+        .navbar-centerr {
+            float: none;
+            margin: 0 auto;
+            display: table;
+            table-layout: fixed;
+        }
+
+        .business-logo-align {
+            float: left;
+            padding: 5px 25px;
+            font-size: 18px;
+            line-height: 20px;
+            height: 50px;
+        }
+
+        @media screen and (max-width: 992px) {
+            #search {
+                width: 600px;
+                margin-left: 80px;
+            }
+
+            .w-100 {
+                text-align: center;
+                width: 100% !important;
+                /* margin-left: 50%; */
+                background-color: #1d1d1d;
+                z-index: 999;
+            }
+            #navbar-list-9{
+                margin-left: 0;
+            }
+            .dropdown-menu{
+               margin-right: calc(50% - 75px);
+            }
+        }
+        #navbar-list-9{
+                margin-left: 3%;
+            }
+        .dropdown-menu.show {
+            display: block;
+            width: 100px;
+            margin-left: -20px;
+        }
+
+        header {
+            
+            /* Resize the background image to cover the entire container */
+            /*background-image: url(../img/E-Commerce-Background-Head-Nav.png);*/
+            background-color: #1d1d1d; 
+            position: fixed; top: 0; z-index: 999; width: 100%;
+            color:#c7c7c7;
+            /*opacity:0.5;*/
+        }
+        header::before{
+            content: "";
+  background-image: url(../img/E-Commerce-Background-Head-Nav.png);
+  background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image E-Commerce-Background-Head-Nav*/
+            background-size: cover;
+            opacity: 0.1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;   
+        }
+
+        header nav div a {
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        header nav {
+            height: 70px;
+            background-color: #1d1d1d;
+            /* background-image: url(../img/bg1.jpg); */
+            opacity:0.9;
+        }
+        /* .like-btn {
+            position: absolute;
+            
+            background: url('twitter-heart.png');
+           
+            background-size: 2900%;
+            background-repeat: no-repeat;
+          }
+           */
+          .is-active {
+            animation-name: animate;
+            animation-duration: .8s;
+            animation-iteration-count: 1;
+            animation-timing-function: steps(28);
+            animation-fill-mode: forwards;
+          }
+           
+          @keyframes animate {
+            0%   { background-position: left;  }
+            50%  { background-position: right; }
+            100% { background-position: right; }
+          }
+          #navbarDropdownMenuLink_customer:hover{
+              color:#ff0000;
+          }
